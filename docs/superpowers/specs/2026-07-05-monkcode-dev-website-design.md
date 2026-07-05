@@ -2,6 +2,9 @@
 
 **Date:** 2026-07-05
 **Status:** Approved for one-shot implementation (user pre-authorized autonomous execution)
+**Revision note (2026-07-05, post-launch):** §6 copy was revised on Gregory's feedback — the
+jazz-metaphor headings/404 were replaced with plainer, grounded wording. The live copy source
+of truth is `src/data/copy.{en,nl}.ts`; §3's fact base remains binding and unchanged.
 **Repo:** `monk-code/monkcode-dev` (public) · **Domain:** monkcode.dev (Vercel-registered, monkcode team)
 
 ---

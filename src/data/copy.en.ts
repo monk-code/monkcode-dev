@@ -90,12 +90,11 @@ export const en: PageCopy = {
         image: 'bright-energy',
       },
     ],
-    footnote:
-      'Side project: Stoic Companion, an offline-first web app — because craft needs practice.',
+    footnote: 'Side project: Stoic Companion, an offline-first web app for daily Stoic practice.',
   },
   about: {
-    heading: 'The monk and the rhythm',
-    body: "MONKCODE is named after Thelonious Monk: disciplined craft, played with feeling. That's the kind of software I like to build — structured enough to trust, human enough to enjoy using. I studied history before I found code, and I've spent the last decade building frontends for products from construction platforms to energy systems. Off the clock: jazz, a bit of piano, Nassim Taleb books, and losing gracefully at Dark Souls.",
+    heading: "Who you'll be working with",
+    body: "I'm Gregory Deseck, a frontend developer from Ghent. I studied history before I found code, and I've spent the past decade building frontends — from a collaboration platform for the construction industry to an energy management system. The name MONKCODE is a nod to Thelonious Monk: structured music with a personal touch, which is how I like to build software too. Outside work: piano, Nassim Taleb books, and the occasional Dark Souls defeat.",
   },
   contact: {
     heading: 'Have a project in mind?',
@@ -110,8 +109,8 @@ export const en: PageCopy = {
     contact: 'Contact',
   },
   notFound: {
-    title: 'Off the record',
-    body: "This page doesn't exist — a rare wrong note. Let's get you back to the theme.",
+    title: 'Page not found',
+    body: "This page doesn't exist. The homepage does.",
     cta: 'Back to the homepage',
   },
 }

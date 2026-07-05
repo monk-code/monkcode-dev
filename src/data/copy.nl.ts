@@ -91,11 +91,11 @@ export const nl: PageCopy = {
       },
     ],
     footnote:
-      'Zijproject: Stoic Companion, een offline-first webapp — want vakmanschap vraagt oefening.',
+      'Zijproject: Stoic Companion, een offline-first webapp voor dagelijkse stoïcijnse oefening.',
   },
   about: {
-    heading: 'De monnik en het ritme',
-    body: 'MONKCODE is genoemd naar Thelonious Monk: gedisciplineerd vakmanschap, gespeeld met gevoel. Zo bouw ik ook graag software — gestructureerd genoeg om op te vertrouwen, menselijk genoeg om graag te gebruiken. Ik studeerde geschiedenis voor ik bij code belandde, en bouwde het voorbije decennium frontends voor producten van bouwplatformen tot energiesystemen. Naast het werk: jazz, een beetje piano, boeken van Nassim Taleb, en gracieus verliezen in Dark Souls.',
+    heading: 'Met wie u samenwerkt',
+    body: 'Ik ben Gregory Deseck, frontend developer uit Gent. Ik studeerde geschiedenis voor ik bij code belandde, en bouwde het voorbije decennium frontends — van een samenwerkingsplatform voor de bouwsector tot een energiemanagementsysteem. De naam MONKCODE verwijst naar Thelonious Monk: gestructureerde muziek met een eigen toets, en zo bouw ik ook graag software. Naast het werk: piano, boeken van Nassim Taleb, en af en toe verliezen tegen Dark Souls.',
   },
   contact: {
     heading: 'Een project in gedachten?',
@@ -110,8 +110,8 @@ export const nl: PageCopy = {
     contact: 'Contact',
   },
   notFound: {
-    title: 'Naast de plaat',
-    body: 'Deze pagina bestaat niet — een zeldzame valse noot. We brengen u terug naar het thema.',
+    title: 'Pagina niet gevonden',
+    body: 'Deze pagina bestaat niet. De homepagina wel.',
     cta: 'Terug naar de homepagina',
   },
 }
