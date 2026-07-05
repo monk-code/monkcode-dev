@@ -1,0 +1,33 @@
+---
+import '@/styles/global.css'
+import JsonLd from '@/components/JsonLd.astro'
+import Seo from '@/components/Seo.astro'
+import type { Locale } from '@/data/types'
+
+type Props = { title: string; description: string; locale: Locale; path: string }
+const { title, description, locale, path } = Astro.props
+---
+
+<!doctype html>
+<html lang={locale === 'nl' ? 'nl-BE' : 'en'} data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#121212" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script is:inline>
+      const stored = localStorage.getItem('theme')
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches
+      document.documentElement.dataset.theme = stored ?? (prefersLight ? 'light' : 'dark')
+    </script>
+    <Seo {title} {description} {locale} {path} />
+    <JsonLd />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

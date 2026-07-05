@@ -1,0 +1,25 @@
+---
+import { site } from '@/data/site'
+import type { Locale } from '@/data/types'
+
+type Props = { title: string; description: string; locale: Locale; path: string }
+const { title, description, locale, path } = Astro.props
+const canonical = new URL(path, site.url).href
+const enUrl = new URL(path.replace(/^\/nl\/?/, '/'), site.url).href
+const nlPath = path.startsWith('/nl') ? path : `/nl${path === '/' ? '/' : path}`
+const nlUrl = new URL(nlPath, site.url).href
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="en" href={enUrl} />
+<link rel="alternate" hreflang="nl-BE" href={nlUrl} />
+<link rel="alternate" hreflang="x-default" href={enUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={new URL('/og/og-image.png', site.url).href} />
+<meta property="og:locale" content={locale === 'nl' ? 'nl_BE' : 'en_US'} />
+<meta name="twitter:card" content="summary_large_image" />

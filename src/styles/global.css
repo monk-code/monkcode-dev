@@ -1,9 +1,9 @@
-@import 'tailwindcss';
-@import '@fontsource/montserrat/600.css';
-@import '@fontsource/montserrat/700.css';
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/jetbrains-mono/400.css';
+@import "tailwindcss";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/jetbrains-mono/400.css";
 
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
@@ -24,7 +24,7 @@
   --ink-muted: var(--color-rhythm-grey);
   --accent: var(--color-monk-yellow);
 }
-[data-theme='light'] {
+[data-theme="light"] {
   color-scheme: light;
   --surface: var(--color-silent-white);
   --ink: var(--color-code-black);

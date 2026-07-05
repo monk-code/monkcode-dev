@@ -99,7 +99,7 @@ export const en: PageCopy = {
   },
   contact: {
     heading: 'Have a project in mind?',
-    body: 'Tell me what you\'re trying to build — in plain language, no spec required. I\'ll reply within two working days with honest advice, even if that advice is "you don\'t need a developer for this."',
+    body: "Tell me what you're trying to build — in plain language, no spec required. I'll reply within two working days with honest advice, even if that advice is \"you don't need a developer for this.\"",
     location: 'Based in Ghent · working across Belgium, remote-friendly',
   },
   nav: {

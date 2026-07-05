@@ -1,0 +1,28 @@
+---
+import { site } from '@/data/site'
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: site.owner,
+    jobTitle: 'Freelance Frontend Developer',
+    email: `mailto:${site.email}`,
+    url: site.url,
+    address: { '@type': 'PostalAddress', addressLocality: 'Ghent', addressCountry: 'BE' },
+    sameAs: [site.linkedin, site.github],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: site.name,
+    url: site.url,
+    email: site.email,
+    founder: site.owner,
+    areaServed: 'Belgium',
+    address: { '@type': 'PostalAddress', addressLocality: 'Ghent', addressCountry: 'BE' },
+  },
+]
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
