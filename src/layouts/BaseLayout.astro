@@ -4,8 +4,15 @@ import JsonLd from '@/components/JsonLd.astro'
 import Seo from '@/components/Seo.astro'
 import type { Locale } from '@/data/types'
 
-type Props = { title: string; description: string; locale: Locale; path: string }
-const { title, description, locale, path } = Astro.props
+type Props = {
+  title: string
+  description: string
+  locale: Locale
+  path: string
+  skipLink: string
+  noindex?: boolean
+}
+const { title, description, locale, path, skipLink, noindex = false } = Astro.props
 ---
 
 <!doctype html>
@@ -15,6 +22,7 @@ const { title, description, locale, path } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#121212" />
@@ -24,10 +32,11 @@ const { title, description, locale, path } = Astro.props
       const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches
       document.documentElement.dataset.theme = stored ?? (prefersLight ? 'light' : 'dark')
     </script>
-    <Seo {title} {description} {locale} {path} />
+    <Seo {title} {description} {locale} {path} {noindex} />
     <JsonLd />
   </head>
   <body>
+    <a class="skip-link" href="#main">{skipLink}</a>
     <slot />
   </body>
 </html>

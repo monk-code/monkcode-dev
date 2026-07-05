@@ -3,7 +3,8 @@
 ## Non-negotiables
 
 - **TDD for behavior changes**: failing test first, then implementation. Visual-only changes
-  are exempt but require both-theme verification.
+  are exempt but require both-theme verification AND `pnpm test:visual` (Playwright suite in
+  `tests/visual.spec.ts`; baselines are local-only — `pnpm test:visual:update` regenerates).
 - **`pnpm check` must pass before every commit** (typecheck, astro check, biome, unit tests).
   After changing anything the build serves, also run `pnpm build && pnpm test:build`.
 - **Copy lives only in `src/data/`** (`copy.en.ts`, `copy.nl.ts`, `site.ts`). Never hardcode

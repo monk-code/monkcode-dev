@@ -12,7 +12,7 @@ const { copy } = Astro.props
     {
       copy.items.map((item, i) => (
         <li class:list={['card p-7', i % 2 === 1 && 'md:translate-y-6']}>
-          <span class="font-mono text-2xl font-bold text-(--accent)">
+          <span class="font-mono text-2xl font-bold text-(--accent-ink)">
             {String(i + 1).padStart(2, '0')}
           </span>
           <h3 class="mt-3 text-xl font-semibold">{item.title}</h3>

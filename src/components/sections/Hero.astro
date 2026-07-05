@@ -16,9 +16,9 @@ const { copy } = Astro.props
     </h1>
     <p class="mt-7 max-w-prose text-lg text-(--ink-muted) md:text-xl">{copy.sub}</p>
     <p
-      class="mt-7 inline-flex items-center gap-2 rounded-full border border-(--accent)/60 px-4 py-1.5 font-mono text-sm"
+      class="mt-7 inline-flex items-center gap-2 rounded-full border border-(--accent-ink)/60 px-4 py-1.5 font-mono text-sm"
     >
-      <span class="size-2 animate-pulse rounded-full bg-(--accent)" aria-hidden="true"></span>
+      <span class="size-2 animate-pulse rounded-full bg-(--accent-ink)" aria-hidden="true"></span>
       {copy.badge}
     </p>
     <div class="mt-9 flex flex-wrap gap-4">
@@ -29,7 +29,7 @@ const { copy } = Astro.props
   <div class="portrait-stage">
     <Image
       src={portrait}
-      alt="Illustrated portrait of Gregory Deseck"
+      alt={copy.portraitAlt}
       class="relative mx-auto w-64 md:w-full"
       loading="eager"
     />

@@ -22,16 +22,18 @@ const imageFor = (key: string) => Object.entries(images).find(([p]) => p.include
             {img && (
               <Image
                 src={img}
-                alt={item.name}
+                alt={`${copy.imageAltPrefix} ${item.name}`}
                 class="aspect-video w-full object-cover"
                 widths={[400, 800]}
                 sizes="(min-width: 768px) 50vw, 100vw"
               />
             )}
             <div class="p-7">
-              <p class="font-mono text-xs uppercase tracking-widest text-(--accent)">{item.tag}</p>
+              <p class="font-mono text-xs uppercase tracking-widest text-(--accent-ink)">
+                {item.tag}
+              </p>
               <h3 class="mt-2 text-xl font-semibold">
-                <a href={item.url} rel="noopener" target="_blank" class="hover:text-(--accent)">
+                <a href={item.url} rel="noopener" target="_blank" class="hover:text-(--accent-ink)">
                   {item.name}
                 </a>
               </h3>

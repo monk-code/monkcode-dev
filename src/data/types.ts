@@ -17,12 +17,14 @@ export type PageCopy = {
     badge: string
     ctaPrimary: string
     ctaSecondary: string
+    portraitAlt: string
   }
   services: { heading: string; items: { title: string; body: string }[] }
   method: { heading: string; intro: string; items: { title: string; body: string }[] }
-  work: { heading: string; items: WorkItem[]; footnote: string }
+  work: { heading: string; items: WorkItem[]; imageAltPrefix: string; footnote: string }
   about: { heading: string; body: string }
   contact: { heading: string; body: string; location: string }
   nav: { services: string; method: string; work: string; about: string; contact: string }
+  ui: { skipLink: string; themeToggle: string; menuOpen: string; mobileNavLabel: string }
   notFound: { title: string; body: string; cta: string }
 }

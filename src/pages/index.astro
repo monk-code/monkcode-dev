@@ -13,9 +13,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 const copy = getCopy('en')
 ---
 
-<BaseLayout title={copy.meta.title} description={copy.meta.description} locale="en" path="/">
-  <SiteHeader copy={copy.nav} locale="en" />
-  <main>
+<BaseLayout
+  title={copy.meta.title}
+  description={copy.meta.description}
+  locale="en"
+  path="/"
+  skipLink={copy.ui.skipLink}
+>
+  <SiteHeader copy={copy.nav} ui={copy.ui} locale="en" />
+  <main id="main">
     <Hero copy={copy.hero} />
     <Services copy={copy.services} />
     <Method copy={copy.method} />

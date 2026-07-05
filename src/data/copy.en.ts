@@ -4,7 +4,7 @@ export const en: PageCopy = {
   meta: {
     title: 'MONKCODE — Freelance web development & AI automation, Ghent',
     description:
-      'Senior frontend developer in Ghent taking on small freelance missions: websites for small businesses, web apps, and responsible AI automation. Enterprise discipline, small-business scale.',
+      'Senior frontend developer in Ghent for small freelance missions: websites for small businesses, web apps and responsible AI automation.',
   },
   hero: {
     eyebrow: 'MONKCODE · Freelance developer — Ghent, Belgium',
@@ -13,13 +13,14 @@ export const en: PageCopy = {
     badge: 'Open for small missions',
     ctaPrimary: 'Tell me about your project',
     ctaSecondary: 'See my work',
+    portraitAlt: 'Illustrated portrait of Gregory Deseck',
   },
   services: {
     heading: 'What I can do for you',
     items: [
       {
         title: 'A website that works for you',
-        body: "Fast, findable, and easy to update yourself — no developer needed for a text change. I've built exactly this for a group practice and an independent dietitian, and both teams edit their own sites today. From first sketch to live site, hosting included.",
+        body: "Fast, findable, and easy to update yourself — no developer needed for a text change. I've built exactly this for a group practice and an independent dietitian, and both clients update their own sites today. From first sketch to live site, hosting included.",
       },
       {
         title: 'Web apps & frontend engineering',
@@ -56,20 +57,21 @@ export const en: PageCopy = {
   },
   work: {
     heading: 'Selected work',
+    imageAltPrefix: 'Homepage of',
     items: [
       {
         name: 'Groepspraktijk Paviljoen',
         tag: 'Small business',
         description:
-          'Website for a group practice for dietetics and therapy. The team manages its own content, pricing, and staff pages — no developer needed.',
+          'Website for a group practice for dietetics and therapy. The team manages its own content, pricing, and staff pages, entirely without a developer.',
         url: 'https://www.groepspraktijkpaviljoen.be',
         image: 'groepspraktijk-paviljoen',
       },
       {
-        name: 'Dietiste Hanne Van Nuffel',
+        name: 'Diëtiste Hanne Van Nuffel',
         tag: 'Small business',
         description:
-          'Personal-brand site for an independent dietitian, with a content editor she updates herself and automated visual tests guarding every change.',
+          'Personal website for an independent dietitian, with a content editor she updates herself and automated visual tests guarding every change.',
         url: 'https://www.dietistehannevannuffel.be',
         image: 'dietiste-hanne-van-nuffel',
       },
@@ -85,7 +87,7 @@ export const en: PageCopy = {
         name: 'Bright Energy',
         tag: 'Enterprise',
         description:
-          "Energy-management platform for smart batteries and energy trading — my current day job, where I also built the team's AI-assisted development workflow.",
+          "Energy-management platform for smart batteries and energy trading. It's my current day job, and where I built the team's AI-assisted development workflow.",
         url: 'https://bright-energy.eu',
         image: 'bright-energy',
       },
@@ -94,11 +96,11 @@ export const en: PageCopy = {
   },
   about: {
     heading: "Who you'll be working with",
-    body: "I'm Gregory Deseck, a frontend developer from Ghent. I studied history before I found code, and I've spent the past decade building frontends — from a collaboration platform for the construction industry to an energy management system. The name MONKCODE is a nod to Thelonious Monk: structured music with a personal touch, which is how I like to build software too. Outside work: piano, Nassim Taleb books, and the occasional Dark Souls defeat.",
+    body: "I'm Gregory Deseck, a frontend developer from Ghent. I studied history before I found code, and I've spent the past decade building frontends, from a collaboration platform for the construction industry to an energy management system. The name MONKCODE is a nod to Thelonious Monk: structured music with a personal touch, which is how I like to build software too. Outside work: piano, Nassim Taleb books, and the occasional Dark Souls defeat.",
   },
   contact: {
     heading: 'Have a project in mind?',
-    body: "Tell me what you're trying to build — in plain language, no spec required. I'll reply within two working days with honest advice, even if that advice is \"you don't need a developer for this.\"",
+    body: 'Tell me what you’re trying to build — in plain language, no technical brief required. I’ll reply within two working days with honest advice, even if that advice is “you don’t need a developer for this.”',
     location: 'Based in Ghent · working across Belgium, remote-friendly',
   },
   nav: {
@@ -107,6 +109,12 @@ export const en: PageCopy = {
     work: 'Work',
     about: 'About',
     contact: 'Contact',
+  },
+  ui: {
+    skipLink: 'Skip to content',
+    themeToggle: 'Switch between dark and light theme',
+    menuOpen: 'Menu',
+    mobileNavLabel: 'Mobile navigation',
   },
   notFound: {
     title: 'Page not found',

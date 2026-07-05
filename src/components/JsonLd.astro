@@ -7,7 +7,7 @@ const jsonLd = [
     '@type': 'Person',
     name: site.owner,
     jobTitle: 'Freelance Frontend Developer',
-    email: `mailto:${site.email}`,
+    email: site.email,
     url: site.url,
     address: { '@type': 'PostalAddress', addressLocality: 'Ghent', addressCountry: 'BE' },
     sameAs: [site.linkedin, site.github],

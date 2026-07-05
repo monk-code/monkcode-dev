@@ -8,17 +8,22 @@ Bilingual (EN at `/`, NL at `/nl/`), dark-first, static.
 ## Stack
 
 Astro 5 · Tailwind CSS 4 (CSS-first theme) · Vue 3 islands · TypeScript (strictest) ·
-Biome · Vitest + Testing Library · GitHub Actions · Vercel.
+Biome · Vitest + Testing Library · Playwright (visual regression) · GitHub Actions · Vercel.
 
 ## Develop
 
 ```bash
 pnpm install
-pnpm dev          # http://localhost:4321
-pnpm check        # typecheck + astro check + lint + unit tests
-pnpm build        # static build to dist/
-pnpm test:build   # smoke tests against dist/
+pnpm dev                  # http://localhost:4321
+pnpm check                # typecheck + astro check + lint + unit tests
+pnpm build                # static build to dist/
+pnpm test:build           # smoke tests against dist/
+pnpm test:visual          # Playwright visual + overflow tests (4 viewports × 2 locales)
+pnpm test:visual:update   # regenerate visual baselines (first run, or after visual changes)
 ```
+
+Visual baselines are **local-only** (gitignored, not run in CI): generate them once with
+`pnpm test:visual:update`, and run `pnpm test:visual` before pushing any visual change.
 
 ## Editing content
 

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 
+const { label } = defineProps<{ label: string }>()
+
 // SSR-safe: default for server render, real value read after mount
 const theme = ref<'dark' | 'light'>('dark')
 
@@ -18,8 +20,8 @@ const toggle = () => {
 <template>
   <button
     type="button"
-    :aria-label="`Switch theme (current: ${theme})`"
-    class="rounded-full p-2 text-(--ink-muted) transition hover:text-(--accent)"
+    :aria-label="label"
+    class="rounded-full p-2 text-(--ink-muted) transition hover:text-(--accent-ink)"
     @click="toggle"
   >
     <span v-if="theme === 'dark'" aria-hidden="true">☀</span>

@@ -4,8 +4,8 @@ import ThemeToggle from '@/components/islands/ThemeToggle.vue'
 import Logo from '@/components/Logo.astro'
 import type { Locale, PageCopy } from '@/data/types'
 
-type Props = { copy: PageCopy['nav']; locale: Locale }
-const { copy, locale } = Astro.props
+type Props = { copy: PageCopy['nav']; ui: PageCopy['ui']; locale: Locale }
+const { copy, ui, locale } = Astro.props
 const links = [
   { href: '#services', label: copy.services },
   { href: '#method', label: copy.method },
@@ -28,23 +28,23 @@ const altLocaleHref = locale === 'nl' ? '/' : '/nl/'
         links.map((l) => (
           <a
             href={l.href}
-            class="text-sm text-(--ink-muted) underline-offset-8 transition hover:text-(--ink) hover:underline hover:decoration-(--accent) hover:decoration-2"
+            class="text-sm text-(--ink-muted) underline-offset-8 transition hover:text-(--ink) hover:underline hover:decoration-(--accent-ink) hover:decoration-2"
           >
             {l.label}
           </a>
         ))
       }
     </nav>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-1">
       <a
         href={altLocaleHref}
-        class="font-mono text-sm text-(--ink-muted) hover:text-(--accent)"
+        class="p-2 font-mono text-sm text-(--ink-muted) hover:text-(--accent-ink)"
         aria-label={locale === 'nl' ? 'EN — English version' : 'NL — Nederlandse versie'}
       >
         {locale === 'nl' ? 'EN' : 'NL'}
       </a>
-      <ThemeToggle client:load />
-      <MobileNav client:visible {links} />
+      <ThemeToggle client:load label={ui.themeToggle} />
+      <MobileNav client:load {links} navLabel={ui.mobileNavLabel} buttonLabel={ui.menuOpen} />
     </div>
   </div>
 </header>

@@ -3,15 +3,43 @@ import Logo from '@/components/Logo.astro'
 import { getCopy } from '@/data'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 
+// Vercel serves only this root 404 for every miss, including /nl/* — the page
+// swaps to Dutch client-side when the missed path is under /nl/.
 const copy = getCopy('en')
+const nlCopy = getCopy('nl')
+const nl = {
+  lang: 'nl-BE',
+  title: nlCopy.notFound.title,
+  body: nlCopy.notFound.body,
+  cta: nlCopy.notFound.cta,
+  home: '/nl/',
+}
 ---
 
-<BaseLayout title={`404 — ${copy.meta.title}`} description={copy.meta.description} locale="en" path="/404">
-  <main class="flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center">
+<BaseLayout
+  title={`404 — ${copy.meta.title}`}
+  description={copy.meta.description}
+  locale="en"
+  path="/404"
+  skipLink={copy.ui.skipLink}
+  noindex
+>
+  <main id="main" class="flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center">
     <span class="text-(--ink)"><Logo class="h-10 w-auto" /></span>
-    <p class="cursor-blink font-mono text-6xl font-bold text-(--accent)">404</p>
-    <h1 class="text-3xl font-bold">{copy.notFound.title}</h1>
-    <p class="max-w-prose text-(--ink-muted)">{copy.notFound.body}</p>
-    <a href="/" class="btn-primary">{copy.notFound.cta}</a>
+    <p class="cursor-blink font-mono text-6xl font-bold text-(--accent-ink)">404</p>
+    <h1 data-i18n="title" class="text-3xl font-bold">{copy.notFound.title}</h1>
+    <p data-i18n="body" class="max-w-prose text-(--ink-muted)">{copy.notFound.body}</p>
+    <a data-i18n="cta" href="/" class="btn-primary">{copy.notFound.cta}</a>
   </main>
+  <script is:inline define:vars={{ nl }}>
+    if (location.pathname.startsWith('/nl')) {
+      document.documentElement.lang = nl.lang
+      document.title = `404 — ${nl.title}`
+      document.querySelector('[data-i18n="title"]').textContent = nl.title
+      document.querySelector('[data-i18n="body"]').textContent = nl.body
+      const cta = document.querySelector('[data-i18n="cta"]')
+      cta.textContent = nl.cta
+      cta.href = nl.home
+    }
+  </script>
 </BaseLayout>

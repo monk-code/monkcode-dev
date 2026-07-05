@@ -70,7 +70,8 @@ Facts verified from the old repo, live sites, GitHub, and Vercel on 2026-07-05:
   automated code review in CI, validation hooks that block bad patterns before they land,
   strict typed/linted codebases designed so AI output is verifiable, test-driven development.
   Has given an internal talk on AI dev setup.
-- **Side project:** Stoic Companion — offline-first PWA (mention-level only).
+- **Side project:** Stoic Companion — offline-first PWA for daily Stoic practice
+  (mention-level only; purpose verified from the repo: Stoic techniques, daily nudges, quotes).
 - **Personality (from old About):** Thelonious Monk fan (hence MONKCODE), reads Nassim Taleb,
   plays a little piano, Bloodborne/Dark Souls, British comedy, IASIP/The Office.
 - **NOT usable:** the `finances` repo (sensitive personal data), meemoo folder (research only),
