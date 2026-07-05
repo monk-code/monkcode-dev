@@ -35,6 +35,12 @@ export default defineConfig({
       },
     },
     {
+      // non-emulated desktop at a narrow window: catches overflow that mobile
+      // emulation hides (scrollWidth behaves differently with isMobile)
+      name: 'Laptop',
+      use: { ...devices['Desktop Chrome'], viewport: { width: 1024, height: 768 } },
+    },
+    {
       name: 'Desktop',
       use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } },
     },
