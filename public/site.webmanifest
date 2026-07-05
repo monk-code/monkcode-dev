@@ -1,16 +1,16 @@
 {
   "name": "MONKCODE - We Code with Rhythm",
   "short_name": "MONKCODE",
-  "description": "Professional software development with the discipline of a monk and the rhythm of jazz",
+  "description": "Freelance web development & AI automation — Ghent",
   "icons": [
     {
-      "src": "/assets/logos/favicon/web-app-manifest-192x192.png",
+      "src": "/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/logos/favicon/web-app-manifest-512x512.png",
+      "src": "/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
