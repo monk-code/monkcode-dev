@@ -5,9 +5,9 @@
   "installCommand": "pnpm install",
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.monkcode.dev" }],
-      "destination": "https://monkcode.dev/:path*",
+      "destination": "https://monkcode.dev/$1",
       "permanent": true
     }
   ],
