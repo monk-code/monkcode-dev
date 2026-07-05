@@ -42,6 +42,7 @@
     "@fontsource/montserrat": "^5.2.5",
     "@tailwindcss/vite": "^4.0.0",
     "@testing-library/vue": "^8.1.0",
+    "@vitejs/plugin-vue": "^6.0.7",
     "@vue/test-utils": "^2.4.6",
     "happy-dom": "^18.0.1",
     "sharp": "^0.34.2",

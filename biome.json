@@ -22,7 +22,7 @@
   },
   "overrides": [
     {
-      "includes": ["**/*.astro"],
+      "includes": ["**/*.astro", "**/*.vue"],
       "linter": {
         "rules": {
           "correctness": { "noUnusedVariables": "off", "noUnusedImports": "off" }
