@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets'
+import portrait from '@/assets/images/me-no-background.webp'
+import { site } from '@/data/site'
+import type { PageCopy } from '@/data/types'
+
+type Props = { copy: PageCopy['hero'] }
+const { copy } = Astro.props
+---
+
+<section class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-[3fr_2fr]">
+  <div>
+    <p class="font-mono text-sm text-(--ink-muted)">{copy.eyebrow}</p>
+    <h1 class="mt-4 text-4xl font-bold md:text-6xl">{copy.title}</h1>
+    <p class="mt-6 max-w-prose text-lg text-(--ink-muted)">{copy.sub}</p>
+    <p
+      class="mt-6 inline-flex items-center gap-2 rounded-full border border-(--accent) px-3 py-1 text-sm"
+    >
+      <span class="size-2 rounded-full bg-(--accent)" aria-hidden="true"></span>{copy.badge}
+    </p>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a
+        href={`mailto:${site.email}`}
+        class="rounded-md bg-(--accent) px-6 py-3 font-display font-semibold text-(--color-code-black)"
+      >
+        {copy.ctaPrimary}
+      </a>
+      <a
+        href="#work"
+        class="rounded-md border border-(--ink-muted) px-6 py-3 font-display font-semibold"
+      >
+        {copy.ctaSecondary}
+      </a>
+    </div>
+  </div>
+  <Image
+    src={portrait}
+    alt="Illustrated portrait of Gregory Deseck"
+    class="mx-auto w-64 md:w-full"
+    loading="eager"
+  />
+</section>

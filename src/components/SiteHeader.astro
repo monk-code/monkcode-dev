@@ -1,0 +1,47 @@
+---
+import MobileNav from '@/components/islands/MobileNav.vue'
+import ThemeToggle from '@/components/islands/ThemeToggle.vue'
+import Logo from '@/components/Logo.astro'
+import type { Locale, PageCopy } from '@/data/types'
+
+type Props = { copy: PageCopy['nav']; locale: Locale }
+const { copy, locale } = Astro.props
+const links = [
+  { href: '#services', label: copy.services },
+  { href: '#method', label: copy.method },
+  { href: '#work', label: copy.work },
+  { href: '#about', label: copy.about },
+  { href: '#contact', label: copy.contact },
+]
+const altLocaleHref = locale === 'nl' ? '/' : '/nl/'
+---
+
+<header
+  class="sticky top-0 z-40 border-b border-(--ink-muted)/20 bg-(--surface)/90 backdrop-blur"
+>
+  <div class="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+    <a href={locale === 'nl' ? '/nl/' : '/'} aria-label="MONKCODE home" class="text-(--ink)">
+      <Logo class="h-7 w-auto" />
+    </a>
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Main">
+      {
+        links.map((l) => (
+          <a href={l.href} class="text-sm text-(--ink-muted) transition hover:text-(--ink)">
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="flex items-center gap-2">
+      <a
+        href={altLocaleHref}
+        class="font-mono text-sm text-(--ink-muted) hover:text-(--accent)"
+        aria-label={locale === 'nl' ? 'English version' : 'Nederlandse versie'}
+      >
+        {locale === 'nl' ? 'EN' : 'NL'}
+      </a>
+      <ThemeToggle client:load />
+      <MobileNav client:visible {links} />
+    </div>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+---
+import type { PageCopy } from '@/data/types'
+
+type Props = { copy: PageCopy['about'] }
+const { copy } = Astro.props
+---
+
+<section id="about" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <h2 class="text-3xl font-bold md:text-4xl">{copy.heading}</h2>
+  <p class="mt-6 max-w-prose text-lg text-(--ink-muted)">{copy.body}</p>
+</section>

@@ -1,0 +1,22 @@
+---
+import type { PageCopy } from '@/data/types'
+
+type Props = { copy: PageCopy['method'] }
+const { copy } = Astro.props
+---
+
+<section id="method" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <h2 class="text-3xl font-bold md:text-4xl">{copy.heading}</h2>
+  <p class="mt-4 max-w-prose text-lg text-(--ink-muted)">{copy.intro}</p>
+  <ol class="mt-10 grid gap-6 md:grid-cols-2">
+    {
+      copy.items.map((item, i) => (
+        <li class="rounded-xl border border-(--ink-muted)/25 p-6">
+          <span class="font-mono text-sm text-(--accent)">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="mt-2 text-xl font-semibold">{item.title}</h3>
+          <p class="mt-3 text-(--ink-muted)">{item.body}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

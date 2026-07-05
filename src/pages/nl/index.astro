@@ -1,0 +1,27 @@
+---
+import SiteFooter from '@/components/SiteFooter.astro'
+import SiteHeader from '@/components/SiteHeader.astro'
+import About from '@/components/sections/About.astro'
+import Contact from '@/components/sections/Contact.astro'
+import Hero from '@/components/sections/Hero.astro'
+import Method from '@/components/sections/Method.astro'
+import Services from '@/components/sections/Services.astro'
+import Work from '@/components/sections/Work.astro'
+import { getCopy } from '@/data'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+const copy = getCopy('nl')
+---
+
+<BaseLayout title={copy.meta.title} description={copy.meta.description} locale="nl" path="/nl/">
+  <SiteHeader copy={copy.nav} locale="nl" />
+  <main>
+    <Hero copy={copy.hero} />
+    <Services copy={copy.services} />
+    <Method copy={copy.method} />
+    <Work copy={copy.work} />
+    <About copy={copy.about} />
+    <Contact copy={copy.contact} />
+  </main>
+  <SiteFooter />
+</BaseLayout>

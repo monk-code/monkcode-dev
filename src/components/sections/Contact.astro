@@ -1,0 +1,27 @@
+---
+import { site } from '@/data/site'
+import type { PageCopy } from '@/data/types'
+
+type Props = { copy: PageCopy['contact'] }
+const { copy } = Astro.props
+---
+
+<section id="contact" class="mx-auto max-w-6xl scroll-mt-20 px-6 py-20">
+  <h2 class="text-3xl font-bold md:text-4xl">{copy.heading}</h2>
+  <p class="mt-6 max-w-prose text-lg text-(--ink-muted)">{copy.body}</p>
+  <div class="mt-8 flex flex-wrap items-center gap-4">
+    <a
+      href={`mailto:${site.email}`}
+      class="rounded-md bg-(--accent) px-6 py-3 font-display font-semibold text-(--color-code-black)"
+    >
+      {site.email}
+    </a>
+    <a href={site.linkedin} rel="noopener" target="_blank" class="underline hover:text-(--accent)">
+      LinkedIn
+    </a>
+    <a href={site.github} rel="noopener" target="_blank" class="underline hover:text-(--accent)">
+      GitHub
+    </a>
+  </div>
+  <p class="mt-6 font-mono text-sm text-(--ink-muted)">{copy.location}</p>
+</section>

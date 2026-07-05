@@ -1,0 +1,12 @@
+---
+import raw from '@/assets/logos/svg/logo-horizontal.svg?raw'
+
+type Props = { class?: string }
+const { class: className = 'h-8 w-auto' } = Astro.props
+
+const svg = raw
+  .replace(/fill="black"/g, 'fill="currentColor"')
+  .replace('<svg ', `<svg class="${className}" role="img" aria-label="MONKCODE" `)
+---
+
+<Fragment set:html={svg} />
