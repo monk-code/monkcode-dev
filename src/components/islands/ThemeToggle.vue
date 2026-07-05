@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
-const theme = ref(document.documentElement.dataset.theme ?? 'dark')
+// SSR-safe: default for server render, real value read after mount
+const theme = ref<'dark' | 'light'>('dark')
+
+onMounted(() => {
+  theme.value = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'
+})
 
 const toggle = () => {
   theme.value = theme.value === 'dark' ? 'light' : 'dark'

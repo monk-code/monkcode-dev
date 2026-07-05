@@ -8,35 +8,30 @@ type Props = { copy: PageCopy['hero'] }
 const { copy } = Astro.props
 ---
 
-<section class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-[3fr_2fr]">
-  <div>
-    <p class="font-mono text-sm text-(--ink-muted)">{copy.eyebrow}</p>
-    <h1 class="mt-4 text-4xl font-bold md:text-6xl">{copy.title}</h1>
-    <p class="mt-6 max-w-prose text-lg text-(--ink-muted)">{copy.sub}</p>
+<section class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-[3fr_2fr] md:py-32">
+  <div class="stagger">
+    <p class="font-mono text-sm tracking-wide text-(--ink-muted)">{copy.eyebrow}</p>
+    <h1 class="cursor-blink mt-5 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+      {copy.title}
+    </h1>
+    <p class="mt-7 max-w-prose text-lg text-(--ink-muted) md:text-xl">{copy.sub}</p>
     <p
-      class="mt-6 inline-flex items-center gap-2 rounded-full border border-(--accent) px-3 py-1 text-sm"
+      class="mt-7 inline-flex items-center gap-2 rounded-full border border-(--accent)/60 px-4 py-1.5 font-mono text-sm"
     >
-      <span class="size-2 rounded-full bg-(--accent)" aria-hidden="true"></span>{copy.badge}
+      <span class="size-2 animate-pulse rounded-full bg-(--accent)" aria-hidden="true"></span>
+      {copy.badge}
     </p>
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a
-        href={`mailto:${site.email}`}
-        class="rounded-md bg-(--accent) px-6 py-3 font-display font-semibold text-(--color-code-black)"
-      >
-        {copy.ctaPrimary}
-      </a>
-      <a
-        href="#work"
-        class="rounded-md border border-(--ink-muted) px-6 py-3 font-display font-semibold"
-      >
-        {copy.ctaSecondary}
-      </a>
+    <div class="mt-9 flex flex-wrap gap-4">
+      <a href={`mailto:${site.email}`} class="btn-primary">{copy.ctaPrimary}</a>
+      <a href="#work" class="btn-secondary">{copy.ctaSecondary}</a>
     </div>
   </div>
-  <Image
-    src={portrait}
-    alt="Illustrated portrait of Gregory Deseck"
-    class="mx-auto w-64 md:w-full"
-    loading="eager"
-  />
+  <div class="portrait-stage">
+    <Image
+      src={portrait}
+      alt="Illustrated portrait of Gregory Deseck"
+      class="relative mx-auto w-64 md:w-full"
+      loading="eager"
+    />
+  </div>
 </section>

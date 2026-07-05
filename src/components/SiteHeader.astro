@@ -26,7 +26,10 @@ const altLocaleHref = locale === 'nl' ? '/' : '/nl/'
     <nav class="hidden items-center gap-6 md:flex" aria-label="Main">
       {
         links.map((l) => (
-          <a href={l.href} class="text-sm text-(--ink-muted) transition hover:text-(--ink)">
+          <a
+            href={l.href}
+            class="text-sm text-(--ink-muted) underline-offset-8 transition hover:text-(--ink) hover:underline hover:decoration-(--accent) hover:decoration-2"
+          >
             {l.label}
           </a>
         ))
